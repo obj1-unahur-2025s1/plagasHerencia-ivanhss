@@ -1,0 +1,22 @@
+import plagas.*
+describe "testElementos" {
+    const perro1 = new Mascota(salud=280)
+    const hogar1 = new Hogar(mugre=20, confort= 100)
+    const huerta1 = new Huerta(produccion=200)
+    const pulga1 = new Pulgas(poblacion=10)
+    const cucurachas1 = new Cucaracha(poblacion=100, pesoPromedioBicho=15)
+    const mosquitos1 = new Mosquito(poblacion=15)
+  test "el perro1 es atacado por un grupo de 10 pulgas y su salud baja a 260" {
+    perro1.esAtacadoPor(pulga1)
+    assert.equals(260, perro1.salud())
+  }
+  test "el hogar es atacado por un grupo de 100 cucarachas y su mugre quedan en 70" {
+    hogar1.esAtacadoPor(cucurachas1)
+    assert.equals(70, hogar1.mugre())
+  }
+  test "la huerta1 es atacado por un grupo de 15 mosquito y su produccion queda en 265" {
+    huerta1.esAtacadoPor(mosquitos1)
+    assert.equals(188.5, huerta1.produccion())
+  }
+  
+}
